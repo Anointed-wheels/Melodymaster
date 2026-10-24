@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MelodyMaster | Live 1-on-1 Music Learning Platform</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- UNIQUE NAVIGATION BAR -->
+  <header id="global-nav-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo-link">Melody<span>Master</span></a>
+      <ul class="nav-menu-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="instructors.html">Browse Teachers</a></li>
+        <li><a href="about.html">How It Works</a></li>
+      </ul>
+      <!-- <div class="nav-auth-actions">
+        <a href="login.html" id="nav-login-btn" class="music-btn music-btn--outline">Log In</a>
+        <a href="signup.html" id="nav-signup-btn" class="music-btn music-btn--primary">Get Started</a>
+      </div> -->
+
+      <div class="nav-auth-actions">
+            <a href="login.html" id="nav-login-btn" class="music-btn music-btn--primary">Log In</a>
+        </div>
+
+      <button id="nav-mobile-toggle-btn" class="nav-mobile-toggle" aria-label="Open Navigation">
+        ☰
+      </button>
+    </nav>
+  </header>
+
+  <!-- UNIQUE LANDING MAIN CONTENT -->
+  <main id="landing-main-content" class="animate-fade-in">
+    
+    <!-- Hero Section with Background & Glowing Text -->
+    <section id="landing-hero-section">
+      <div class="hero-wrapper">
+        <div class="hero-badge">🎵 Live HD 1-on-1 Music Lessons</div>
+        <h1 id="landing-hero-title">Master Your Instrument with <span>Elite Instructors</span></h1>
+        <p id="landing-hero-subtitle">Connect with professional musicians for live, crystal-clear video sessions tailored to your exact proficiency. From beginner chords to advanced stage improvisation.</p>
+        <div class="hero-cta-group">
+          <a href="instructors.html" id="landing-hero-cta-find" class="music-btn music-btn--primary">Find Your Teacher</a>
+          <a href="signup.html?role=teacher" id="landing-hero-cta-teach" class="music-btn music-btn--outline">Apply as Instructor</a>
+        </div>
+
+        <!-- Floating Stats Bar -->
+        <div class="hero-stats-bar">
+          <div class="stat-item">
+            <h4>100%</h4>
+            <p>Live Interactive Sessions</p>
+          </div>
+          <div class="stat-item">
+            <h4>Pro Vetted</h4>
+            <p>Certified Musicians</p>
+          </div>
+          <div class="stat-item">
+            <h4>All Tiers</h4>
+            <p>Basic to Advanced</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instruments Category Section -->
+    <section id="landing-instruments-section">
+      <div class="section-header-wrap">
+        <h2>Explore Core Instruments</h2>
+        <p>Select your instrument and start learning with tailored curriculums</p>
+      </div>
+      <div class="instruments-grid">
+        <a href="instructors.html?instrument=guitar" id="landing-card-guitar" class="instrument-card">
+          <div class="instrument-icon">🎸</div>
+          <h3>Guitar</h3>
+          <p>Acoustic fingerpicking, electric rock solos, blues scales, and rhythm fundamentals.</p>
+        </a>
+        <a href="instructors.html?instrument=keyboard" id="landing-card-keyboard" class="instrument-card">
+          <div class="instrument-icon">🎹</div>
+          <h3>Keyboard & Piano</h3>
+          <p>Classical sight-reading, chord inversions, modern jazz progressions, and synth layouts.</p>
+        </a>
+        <a href="instructors.html?instrument=violin" id="landing-card-violin" class="instrument-card">
+          <div class="instrument-icon">🎻</div>
+          <h3>Violin</h3>
+          <p>Bowing techniques, intonation mastery, finger posture, and orchestral repertoire.</p>
+        </a>
+        <a href="instructors.html?instrument=drums" id="landing-card-drums" class="instrument-card">
+          <div class="instrument-icon">🥁</div>
+          <h3>Drums & Percussion</h3>
+          <p>Poly-rhythms, limb independence, metronome timing, and dynamic groove control.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- UNIQUE FOOTER -->
+  <footer id="global-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 MelodyMaster. All rights reserved. Connecting passionate students with world-class music instructors.</p>
+    </div>
+  </footer>
+
+  <!-- SEPARATE JAVASCRIPT FILES -->
+  <script src="js/global.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

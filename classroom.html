@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Virtual Classroom | MelodyMaster</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/portal.css">
+</head>
+<body style="overflow: hidden;">
+
+  <div class="classroom-layout animate-fade-in">
+    <!-- Video Stage -->
+    <div class="video-stage-container">
+      <div style="padding: 1rem 1.5rem; background: rgba(9,13,22,0.8); border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+        <strong>🎸 Live Masterclass: Marcus Vance & Alex</strong>
+        <a href="student-dashboard.html" class="music-btn music-btn--outline" style="padding: 0.3rem 0.8rem; font-size: 0.75rem; border-color: #ef4444; color: #ef4444;">Leave Room</a>
+      </div>
+
+      <div class="video-player-embed">
+        <!-- Embed Jitsi or WebRTC Video Container here -->
+        <div style="text-align: center;">
+          <div style="font-size: 4rem; margin-bottom: 1rem;">📹</div>
+          <h3 style="margin-bottom: 0.5rem;">Live HD Video Feed Active</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">High-fidelity audio & video stream connected via WebRTC / Jitsi API.</p>
+        </div>
+      </div>
+
+      <div class="video-controls-bar">
+        <button class="music-btn music-btn--outline" onclick="alert('Microphone Muted')">🎤 Mute Mic</button>
+        <button class="music-btn music-btn--outline" onclick="alert('Camera Off')">📷 Stop Video</button>
+        <button class="music-btn music-btn--primary" onclick="alert('Screen Share Active')">🖥️ Share Sheet / Tab</button>
+      </div>
+    </div>
+
+    <!-- Live Chat Panel -->
+    <div class="classroom-chat-panel">
+      <div style="padding: 1.25rem; border-bottom: 1px solid var(--border-color); font-weight: 700;">
+        💬 Lesson Chat & Notes
+      </div>
+      <div class="chat-messages-area">
+        <div style="font-size: 0.85rem;">
+          <span style="color: var(--accent-primary); font-weight: 600;">Marcus Vance:</span> Welcome Alex! Let's review the E-minor pentatonic scale today.
+        </div>
+        <div style="font-size: 0.85rem;">
+          <span style="color: var(--text-muted); font-weight: 600;">System:</span> Session recording started.
+        </div>
+      </div>
+      <div class="chat-input-box">
+        <input type="text" class="form-input" placeholder="Type a message..." style="padding: 0.6rem 0.8rem; font-size: 0.85rem;">
+        <button class="music-btn music-btn--primary" style="padding: 0.6rem 1rem; font-size: 0.85rem;">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/global.js"></script>
+</body>
+</html>

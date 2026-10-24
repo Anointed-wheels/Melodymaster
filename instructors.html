@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Instructors | MelodyMaster</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/instructors.css">
+</head>
+<body>
+
+  <!-- UNIQUE NAVIGATION BAR -->
+  <header id="global-nav-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo-link">Melody<span>Master</span></a>
+      <ul class="nav-menu-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="instructors.html">Browse Teachers</a></li>
+        <li><a href="about.html">How It Works</a></li>
+      </ul>
+      <div class="nav-auth-actions">
+        <a href="login.html" id="nav-login-btn" class="music-btn music-btn--outline">Log In</a>
+        <a href="signup.html" id="nav-signup-btn" class="music-btn music-btn--primary">Get Started</a>
+      </div>
+
+      <button id="nav-mobile-toggle-btn" class="nav-mobile-toggle" aria-label="Open Navigation">
+        ☰
+      </button>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main id="instructors-main-content" class="animate-fade-in">
+
+    <!-- Hero Header -->
+    <section id="instructors-hero-section">
+      <h1 id="instructors-hero-title">Find Your Expert <span>Music Instructor</span></h1>
+      <p id="instructors-hero-subtitle">Browse vetted professional musicians ready to guide you through live, 1-on-1 sessions tailored to your exact skill level.</p>
+    </section>
+
+    <!-- Search & Filter Toolbar -->
+    <section id="instructors-filter-toolbar">
+      <div class="search-bar-wrapper">
+        <span class="search-icon-pos">🔍</span>
+        <input type="text" id="instructor-search-input" placeholder="Search by instructor name, instrument (e.g., Guitar, Violin), or style...">
+      </div>
+      <div class="filter-pills-group" id="instrument-filter-group">
+        <button class="filter-pill active" data-filter="all">All Instruments</button>
+        <button class="filter-pill" data-filter="guitar">🎸 Guitar</button>
+        <button class="filter-pill" data-filter="keyboard">🎹 Keyboard & Piano</button>
+        <button class="filter-pill" data-filter="violin">🎻 Violin</button>
+        <button class="filter-pill" data-filter="drums">🥁 Drums</button>
+      </div>
+    </section>
+
+    <!-- Instructors Grid -->
+    <section id="instructors-grid-section">
+      <div class="instructors-grid" id="instructors-card-container">
+
+        <!-- Instructor Card 1: Guitar -->
+        <div class="instructor-card" data-category="guitar" data-name="Marcus Vance">
+          <div class="instructor-header-banner">
+            <span class="instructor-level-badge">Advanced Tier</span>
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop" alt="Marcus Vance" class="instructor-avatar">
+          </div>
+          <div class="instructor-body">
+            <div class="instructor-name-row">
+              <h3>Marcus Vance</h3>
+              <span class="instructor-rating">★ 4.9 (48)</span>
+            </div>
+            <p class="instructor-instrument">Electric & Acoustic Guitar</p>
+            <p class="instructor-bio">Touring session guitarist specializing in advanced blues improvisation, sweep picking, and complex chord voicings.</p>
+            <div class="instructor-footer-row">
+              <div class="instructor-price">$25 <span>/ session</span></div>
+              <a href="instructor-profile.html?id=marcus-vance" class="music-btn music-btn--primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instructor Card 2: Keyboard -->
+        <div class="instructor-card" data-category="keyboard" data-name="Elena Rostova">
+          <div class="instructor-header-banner">
+            <span class="instructor-level-badge">Intermediate Tier</span>
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop" alt="Elena Rostova" class="instructor-avatar">
+          </div>
+          <div class="instructor-body">
+            <div class="instructor-name-row">
+              <h3>Elena Rostova</h3>
+              <span class="instructor-rating">★ 5.0 (62)</span>
+            </div>
+            <p class="instructor-instrument">Classical Piano & Keyboard</p>
+            <p class="instructor-bio">Conservatory graduate focusing on sight-reading fluidity, dynamic expression, and contemporary synth arrangements.</p>
+            <div class="instructor-footer-row">
+              <div class="instructor-price">$30 <span>/ session</span></div>
+              <a href="instructor-profile.html?id=elena-rostova" class="music-btn music-btn--primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instructor Card 3: Violin -->
+        <div class="instructor-card" data-category="violin" data-name="Julian Sterling">
+          <div class="instructor-header-banner">
+            <span class="instructor-level-badge">Basic / Beginner</span>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" alt="Julian Sterling" class="instructor-avatar">
+          </div>
+          <div class="instructor-body">
+            <div class="instructor-name-row">
+              <h3>Julian Sterling</h3>
+              <span class="instructor-rating">★ 4.8 (39)</span>
+            </div>
+            <p class="instructor-instrument">Acoustic & Electric Violin</p>
+            <p class="instructor-bio">Patient instructor specializing in absolute beginners. Perfect posture, bowing drills, and fundamental intonation control.</p>
+            <div class="instructor-footer-row">
+              <div class="instructor-price">$20 <span>/ session</span></div>
+              <a href="instructor-profile.html?id=julian-sterling" class="music-btn music-btn--primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instructor Card 4: Drums -->
+        <div class="instructor-card" data-category="drums" data-name="Damon Cole">
+          <div class="instructor-header-banner">
+            <span class="instructor-level-badge">Advanced Tier</span>
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop" alt="Damon Cole" class="instructor-avatar">
+          </div>
+          <div class="instructor-body">
+            <div class="instructor-name-row">
+              <h3>Damon Cole</h3>
+              <span class="instructor-rating">★ 4.9 (54)</span>
+            </div>
+            <p class="instructor-instrument">Drums & Percussion</p>
+            <p class="instructor-bio">Groove master helping drummers conquer limb independence, odd-time signatures, and pocket timing.</p>
+            <div class="instructor-footer-row">
+              <div class="instructor-price">$28 <span>/ session</span></div>
+              <a href="instructor-profile.html?id=damon-cole" class="music-btn music-btn--primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- UNIQUE FOOTER -->
+  <footer id="global-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 MelodyMaster. All rights reserved. Connecting passionate students with world-class music instructors.</p>
+    </div>
+  </footer>
+
+  <!-- SEPARATE JAVASCRIPT FILES -->
+  <script src="js/global.js"></script>
+  <script src="js/instructors.js"></script>
+</body>
+</html>

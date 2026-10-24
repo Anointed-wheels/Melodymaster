@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User & Application Management | MelodyMaster Admin</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/portal.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- NAVIGATION HEADER -->
+  <header id="global-nav-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo-link">Melody<span>Master</span> <span style="font-size: 0.75rem; background: var(--accent-primary); color:#fff; padding:0.2rem 0.5rem; border-radius:4px; margin-left:0.5rem;">ADMIN</span></a>
+      <ul class="nav-menu-links">
+        <li><a href="admin-dashboard.html">Dashboard</a></li>
+        <li><a href="admin-users.html" style="color: var(--text-main);">Applications & Users</a></li>
+      </ul>
+      <div class="nav-auth-actions">
+        <a href="login.html" class="music-btn music-btn--outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Log Out</a>
+      </div>
+      <button id="nav-mobile-toggle-btn" class="nav-mobile-toggle" aria-label="Open Navigation">☰</button>
+    </nav>
+  </header>
+
+  <!-- MAIN USER MANAGEMENT CONTENT -->
+  <main id="portal-main-wrapper" class="animate-fade-in">
+
+    <div class="portal-welcome-banner">
+      <div>
+        <h1>Teacher Applications & Verification 🛡️</h1>
+        <p>Review new instructor signups, check demo recordings, and grant platform access.</p>
+      </div>
+    </div>
+
+    <!-- Instructor Verification Table -->
+    <div class="dashboard-card-box" style="padding: 0; overflow: hidden;">
+      <div style="padding: 1.5rem; border-bottom: 1px solid var(--border-color); font-weight: 700; font-size: 1.1rem;">
+        Pending & Active Instructors
+      </div>
+      <div class="table-container">
+        <table class="admin-data-table" id="instructor-approval-table">
+          <thead>
+            <tr>
+              <th>Applicant Name</th>
+              <th>Instrument</th>
+              <th>Demo Video</th>
+              <th>Status</th>
+              <th>Space Fee ($15/mo)</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Pending Approval Row -->
+            <tr data-user-row="1">
+              <td>
+                <strong>Samuel Okon</strong><br>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">samuel@example.com</span>
+              </td>
+              <td>Violin</td>
+              <td><a href="#" onclick="alert('Opening Demo Reel Video...')" class="auth-link">Watch Demo 🎥</a></td>
+              <td><span class="badge badge--pending" id="status-badge-1">Pending Approval</span></td>
+              <td><span class="badge badge--unpaid" id="payment-badge-1">Unpaid</span></td>
+              <td>
+                <div style="display: flex; gap: 0.5rem;">
+                  <button class="admin-action-btn btn-approve" onclick="approveTeacher(1)">Approve</button>
+                  <button class="admin-action-btn btn-reject" onclick="rejectTeacher(1)">Reject</button>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Active & Verified Teacher Row -->
+            <tr data-user-row="2">
+              <td>
+                <strong>Marcus Vance</strong><br>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">marcus@example.com</span>
+              </td>
+              <td>Guitar</td>
+              <td><a href="#" onclick="alert('Opening Demo Reel Video...')" class="auth-link">Watch Demo 🎥</a></td>
+              <td><span class="badge badge--approved">Approved</span></td>
+              <td><span class="badge badge--approved">Paid & Verified</span></td>
+              <td>
+                <button class="admin-action-btn btn-reject" onclick="alert('Account suspended')">Suspend</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <footer id="global-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 MelodyMaster. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/global.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

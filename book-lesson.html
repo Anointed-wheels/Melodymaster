@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Lesson | MelodyMaster</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/portal.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+  <header id="global-nav-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo-link">Melody<span>Master</span></a>
+      <ul class="nav-menu-links">
+        <li><a href="student-dashboard.html">Dashboard</a></li>
+        <li><a href="instructors.html">Find Teachers</a></li>
+      </ul>
+      <div class="nav-auth-actions">
+        <a href="login.html" class="music-btn music-btn--outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Log Out</a>
+      </div>
+      <button id="nav-mobile-toggle-btn" class="nav-mobile-toggle" aria-label="Open Navigation">☰</button>
+    </nav>
+  </header>
+
+  <main id="portal-main-wrapper" class="animate-fade-in" style="max-width: 800px;">
+    <div class="dashboard-card-box">
+      <div style="margin-bottom: 2rem; text-align: center;">
+        <h1>Select Time Slot</h1>
+        <p style="color: var(--text-muted);">Booking 1-on-1 Live Session with Marcus Vance ($25)</p>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label class="form-group label" style="margin-bottom: 0.5rem; display:block;">Select Date:</label>
+        <input type="date" class="form-input" value="2026-10-25">
+      </div>
+
+      <label class="form-group label" style="margin-bottom: 0.5rem; display:block;">Available Time Slots (WAT):</label>
+      <div class="booking-calendar-grid">
+        <button class="time-slot-btn selected">10:00 AM</button>
+        <button class="time-slot-btn">12:30 PM</button>
+        <button class="time-slot-btn">03:00 PM</button>
+        <button class="time-slot-btn">05:15 PM</button>
+      </div>
+
+      <button onclick="alert('Proceeding to Secure Checkout & Payment Gateway!')" class="music-btn music-btn--primary" style="width: 100%; margin-top: 1.5rem;">Proceed to Payment ($25)</button>
+    </div>
+  </main>
+
+  <footer id="global-footer">
+    <div class="footer-container"><p>&copy; 2026 MelodyMaster. All rights reserved.</p></div>
+  </footer>
+
+  <script src="js/global.js"></script>
+</body>
+</html>

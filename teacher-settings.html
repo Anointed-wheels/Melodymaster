@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instructor Settings & Profile | MelodyMaster</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/portal.css">
+</head>
+<body>
+
+  <!-- NAVIGATION HEADER -->
+  <header id="global-nav-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo-link">Melody<span>Master</span></a>
+      <ul class="nav-menu-links">
+        <li><a href="teacher-settings.html" style="color: var(--text-main);">Instructor Portal</a></li>
+        <li><a href="instructors.html">Browse Teachers</a></li>
+      </ul>
+      <div class="nav-auth-actions">
+        <a href="login.html" class="music-btn music-btn--outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Log Out</a>
+      </div>
+      <button id="nav-mobile-toggle-btn" class="nav-mobile-toggle" aria-label="Open Navigation">☰</button>
+    </nav>
+  </header>
+
+  <!-- MAIN SETTINGS CONTAINER -->
+  <main id="portal-main-wrapper" class="animate-fade-in" style="max-width: 900px;">
+    
+    <div class="portal-welcome-banner">
+      <div>
+        <h1>Instructor Profile & Settings 🎸</h1>
+        <p>Keep your public listing updated to attract more students.</p>
+      </div>
+      <a href="instructor-profile.html?preview=true" class="music-btn music-btn--outline">Preview Public Profile</a>
+    </div>
+
+    <!-- Profile Edit Form -->
+    <div class="dashboard-card-box">
+      <form id="teacher-profile-update-form" class="auth-form" style="gap: 1.5rem;">
+        
+        <h3 style="margin-bottom: 0;">1. Public Profile Details</h3>
+
+        <div class="form-group">
+          <label for="teacher-bio-input">Instructor Bio / Headline</label>
+          <textarea id="teacher-bio-input" class="form-input" rows="4" placeholder="Describe your experience, teaching style, genres, and accomplishments..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="teacher-video-url">Demo Video URL (YouTube / Vimeo / Cloud Storage)</label>
+          <input type="url" id="teacher-video-url" class="form-input" placeholder="https://youtube.com/watch?v=example">
+        </div>
+
+        <div class="form-group">
+          <label for="teacher-instrument-type">Primary Instrument Taught</label>
+          <select id="teacher-instrument-type" class="form-input">
+            <option value="guitar">Guitar (Acoustic / Electric / Bass)</option>
+            <option value="keyboard">Keyboard & Piano</option>
+            <option value="violin">Violin & String Instruments</option>
+            <option value="drums">Drums & Percussion</option>
+          </select>
+        </div>
+
+        <h3 style="margin-top: 1rem; margin-bottom: 0;">2. Rates & Payout Account</h3>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label for="teacher-rate-input">Lesson Fee (USD $ per 45 mins)</label>
+            <input type="number" id="teacher-rate-input" class="form-input" value="25" min="5" step="1">
+          </div>
+          <div class="form-group">
+            <label for="teacher-payout-bank">Payout Account / Bank</label>
+            <input type="text" id="teacher-payout-bank" class="form-input" placeholder="Bank Name / Account Number">
+          </div>
+        </div>
+
+        <button type="submit" class="music-btn music-btn--primary" style="width: 100%; margin-top: 1rem;">Save Profile Settings</button>
+
+      </form>
+    </div>
+
+  </main>
+
+  <footer id="global-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 MelodyMaster. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/global.js"></script>
+  <script src="js/teacher.js"></script>
+</body>
+</html>

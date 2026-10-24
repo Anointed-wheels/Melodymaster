@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | MelodyMaster</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+  <!-- NAVIGATION HEADER -->
+  <header id="global-nav-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo-link">Melody<span>Master</span></a>
+      <ul class="nav-menu-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="instructors.html">Browse Teachers</a></li>
+        <li><a href="about.html">How It Works</a></li>
+      </ul>
+      <div class="nav-auth-actions">
+        <a href="login.html" id="nav-login-btn" class="music-btn music-btn--primary">Log In</a>
+      </div>
+      <button id="nav-mobile-toggle-btn" class="nav-mobile-toggle" aria-label="Open Navigation">☰</button>
+    </nav>
+  </header>
+
+  <!-- AUTH MAIN CONTAINER -->
+  <main id="auth-main-wrapper" class="animate-fade-in">
+    <div class="auth-card-container">
+      
+      <div class="auth-card-header">
+        <h1 id="signup-header-title">Create an Account</h1>
+        <p id="signup-header-subtitle">Join MelodyMaster and start learning today</p>
+      </div>
+
+      <!-- Role Selector Toggle -->
+      <div class="role-toggle-wrapper">
+        <button type="button" class="role-toggle-btn active" id="role-btn-student" data-role="student">🎓 I am a Student</button>
+        <button type="button" class="role-toggle-btn" id="role-btn-teacher" data-role="teacher">🎸 I am a Teacher</button>
+      </div>
+
+      <form id="auth-signup-form" class="auth-form">
+        <input type="hidden" id="signup-role-input" value="student">
+
+        <div class="form-group">
+          <label for="signup-fullname-input">Full Name</label>
+          <input type="text" id="signup-fullname-input" class="form-input" placeholder="e.g. Alex Johnson" required>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-email-input">Email Address</label>
+          <input type="email" id="signup-email-input" class="form-input" placeholder="alex@example.com" required>
+        </div>
+
+        <!-- Instructor Dynamic Field (Instrument Selection) -->
+        <div class="form-group" id="teacher-instrument-field" style="display: none;">
+          <label for="signup-instrument-select">Primary Instrument Taught</label>
+          <select id="signup-instrument-select" class="form-input">
+            <option value="guitar">Guitar (Acoustic / Electric)</option>
+            <option value="keyboard">Keyboard & Piano</option>
+            <option value="violin">Violin</option>
+            <option value="drums">Drums & Percussion</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-password-input">Password</label>
+          <input type="password" id="signup-password-input" class="form-input" placeholder="Minimum 8 characters" required>
+        </div>
+
+        <button type="submit" id="signup-submit-btn" class="music-btn music-btn--primary" style="width: 100%; margin-top: 0.5rem;">Create Account</button>
+      </form>
+
+      <div class="auth-card-footer">
+        Already have an account? <a href="login.html" class="auth-link">Log In</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="global-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 MelodyMaster. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JS SCRIPTS -->
+  <script src="js/global.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

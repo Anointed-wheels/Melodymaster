@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instructor Dashboard | MelodyMaster</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <!-- NAVIGATION HEADER -->
+  <header id="global-nav-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo-link">Melody<span>Master</span></a>
+      <ul class="nav-menu-links">
+        <li><a href="teacher-dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="instructors.html">Browse Teachers</a></li>
+      </ul>
+      <div class="nav-auth-actions">
+        <button id="logout-btn" class="music-btn music-btn--secondary">Log Out</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- DASHBOARD MAIN CONTAINER -->
+  <main id="auth-main-wrapper" class="animate-fade-in" style="max-width: 800px; margin: 2rem auto;">
+    <div class="auth-card-container" style="width: 100%; max-width: 100%;">
+      
+      <div class="auth-card-header">
+        <h1>Instructor Portal</h1>
+        <p>Manage your teaching space and public instructor profile</p>
+      </div>
+
+      <!-- STATE 1: PENDING ADMIN APPROVAL NOTICE -->
+      <div id="teacher-pending-notice" class="dashboard-notice-box" style="display: none; background: #FEF3C7; border: 1px solid #F59E0B; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: center;">
+        <h3 style="color: #B45309; margin-bottom: 0.5rem;">Application Under Review</h3>
+        <p style="color: #92400E;">Your instructor application has been submitted successfully and is waiting for admin approval. Once approved by the administrator, your dashboard will update to allow your space listing fee payment.</p>
+      </div>
+
+      <!-- STATE 2: SPACE FEE PAYMENT SECTION (Shown when approved by admin, but fee unpaid) -->
+      <div id="teacher-payment-section" style="display: none; background: #F3F4F6; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+        <h3 style="margin-bottom: 0.5rem; color: #1F2937;">🎉 Application Approved!</h3>
+        <p style="margin-bottom: 1rem; color: #4B5563;">Your instructor account has been approved by the admin. To unlock profile editing and make your profile visible to students, please complete your $15 space listing fee payment below:</p>
+        
+        <form id="teacher-space-payment-form">
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="payment-provider-select">Select Payment Provider</label>
+            <select id="payment-provider-select" class="form-input">
+              <option value="paystack">Paystack (Card / Bank Transfer)</option>
+              <option value="flutterwave">Flutterwave</option>
+            </select>
+          </div>
+          <button type="submit" class="music-btn music-btn--primary" style="width: 100%;">Pay $15 Space Fee Now</button>
+        </form>
+      </div>
+
+      <!-- STATE 3: UNLOCKED PROFILE & SETTINGS FORM (Shown after payment confirmation) -->
+      <form id="teacher-profile-update-form" class="auth-form" style="display: none;">
+        <h3 style="margin-bottom: 1rem; border-bottom: 1px solid #E5E7EB; padding-bottom: 0.5rem;">Public Instructor Profile Settings</h3>
+        
+        <div class="form-group">
+          <label for="teacher-bio-input">Professional Bio / Teaching Experience</label>
+          <textarea id="teacher-bio-input" class="form-input" rows="4" placeholder="Tell students about your background, experience, and style..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="teacher-rate-input">Hourly Rate ($ USD)</label>
+          <input type="number" id="teacher-rate-input" class="form-input" placeholder="e.g. 30" required>
+        </div>
+
+        <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
+          <input type="checkbox" id="teacher-public-toggle" style="width: 20px; height: 20px;">
+          <label for="teacher-public-toggle" style="margin-bottom: 0; cursor: pointer;">Make my profile public for students to discover and book</label>
+        </div>
+
+        <button type="submit" id="save-profile-btn" class="music-btn music-btn--primary" style="width: 100%; margin-top: 1rem;">Save Profile Settings</button>
+      </form>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="global-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 MelodyMaster. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JS SCRIPTS -->
+  <script src="js/global.js"></script>
+  <script src="js/teacher-dashboard.js"></script>
+</body>
+</html>

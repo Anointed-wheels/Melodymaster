@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Email | MelodyMaster</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+  <!-- NAVIGATION HEADER -->
+  <header id="global-nav-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo-link">Melody<span>Master</span></a>
+    </nav>
+  </header>
+
+  <!-- VERIFY MAIN CONTAINER -->
+  <main id="auth-main-wrapper" class="animate-fade-in">
+    <div class="auth-card-container">
+      
+      <div class="auth-card-header">
+        <h1>Verify Your Email</h1>
+        <p>Enter the 6-digit confirmation code sent to your email address.</p>
+      </div>
+
+      <form id="auth-verify-form" class="auth-form">
+        <div class="form-group">
+          <label for="verify-email-input">Email Address</label>
+          <input type="email" id="verify-email-input" class="form-input" readonly required>
+        </div>
+
+        <div class="form-group">
+          <label for="verify-otp-input">Verification Code (OTP)</label>
+          <input type="text" id="verify-otp-input" class="form-input" placeholder="Enter 6-digit code" style="letter-spacing: 0.25rem; font-weight: 700; font-size: 1.2rem; text-align: center;" required>
+        </div>
+
+        <button type="submit" id="verify-submit-btn" class="music-btn music-btn--primary" style="width: 100%; margin-top: 0.5rem;">Verify Account</button>
+      </form>
+
+      <div class="auth-card-footer" style="text-align: center; margin-top: 1rem;">
+        Didn't receive code? <a href="#" id="resend-otp-link" class="auth-link">Resend Code</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="global-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 MelodyMaster. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JS SCRIPTS -->
+  <script src="js/global.js"></script>
+  <script src="js/verify.js"></script>
+</body>
+</html>

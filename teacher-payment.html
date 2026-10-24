@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instructor Space Listing | MelodyMaster</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/portal.css">
+</head>
+<body>
+
+  <!-- NAVIGATION HEADER -->
+  <header id="global-nav-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo-link">Melody<span>Master</span></a>
+      <ul class="nav-menu-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="instructors.html">Browse Teachers</a></li>
+      </ul>
+      <div class="nav-auth-actions">
+        <a href="login.html" class="music-btn music-btn--outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Log Out</a>
+      </div>
+      <button id="nav-mobile-toggle-btn" class="nav-mobile-toggle" aria-label="Open Navigation">☰</button>
+    </nav>
+  </header>
+
+  <!-- PAYMENT MAIN CONTENT -->
+  <main id="auth-main-wrapper" class="animate-fade-in">
+    <div class="auth-card-container" style="max-width: 520px;">
+      
+      <div class="auth-card-header">
+        <div style="background: rgba(99, 102, 241, 0.15); color: var(--accent-primary); display: inline-block; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">
+          🎉 Application Approved!
+        </div>
+        <h1>Unlock Your Instructor Space</h1>
+        <p>Complete your platform listing fee to publish your profile and accept paid students.</p>
+      </div>
+
+      <!-- Plan Overview Box -->
+      <div style="background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+          <strong style="font-size: 1.1rem;">Verified Teacher Listing Space</strong>
+          <span style="font-size: 1.25rem; font-weight: 800; color: var(--accent-primary);">$15 <span>/ mo</span></span>
+        </div>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-muted); font-size: 0.85rem;">
+          <li>✓ Public Instructor Profile Listing</li>
+          <li>✓ 1-on-1 Embedded HD Video Classroom Access</li>
+          <li>✓ Automated Student Payments & Split Payouts</li>
+          <li>✓ Complete Schedule & Availability Controls</li>
+        </ul>
+      </div>
+
+      <!-- Simulated Checkout Form -->
+      <form id="teacher-space-payment-form" class="auth-form">
+        <div class="form-group">
+          <label>Selected Payment Provider</label>
+          <select id="payment-provider-select" class="form-input">
+            <option value="paystack">Paystack (Cards, Bank Transfer, USSD)</option>
+            <option value="stripe">Stripe (International Cards / Apple Pay)</option>
+          </select>
+        </div>
+
+        <button type="submit" id="pay-space-submit-btn" class="music-btn music-btn--primary" style="width: 100%; margin-top: 0.5rem;">
+          Pay $15 & Activate Profile
+        </button>
+      </form>
+
+      <div class="auth-card-footer">
+        Need assistance? <a href="about.html" class="auth-link">Contact Admin Support</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="global-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 MelodyMaster. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/global.js"></script>
+  <script src="js/teacher.js"></script>
+</body>
+</html>

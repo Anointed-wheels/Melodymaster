@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | MelodyMaster</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/portal.css">
+</head>
+<body>
+
+  <!-- NAVIGATION HEADER -->
+  <header id="global-nav-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo-link">Melody<span>Master</span></a>
+      <ul class="nav-menu-links">
+        <li><a href="student-dashboard.html" style="color: var(--text-main);">Dashboard</a></li>
+        <li><a href="instructors.html">Find Teachers</a></li>
+      </ul>
+      <div class="nav-auth-actions">
+        <a href="login.html" class="music-btn music-btn--outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Log Out</a>
+      </div>
+      <button id="nav-mobile-toggle-btn" class="nav-mobile-toggle" aria-label="Open Navigation">☰</button>
+    </nav>
+  </header>
+
+  <!-- DASHBOARD MAIN -->
+  <main id="portal-main-wrapper" class="animate-fade-in">
+    
+    <div class="portal-welcome-banner">
+      <div>
+        <h1 id="welcome-heading">Welcome back, Alex! 🎸</h1>
+        <p>You have 1 upcoming live session scheduled this week.</p>
+      </div>
+      <a href="instructors.html" class="music-btn music-btn--primary">Book New Session</a>
+    </div>
+
+    <div class="dashboard-grid-section">
+      <!-- Left Box: Upcoming Lessons -->
+      <div class="dashboard-card-box">
+        <h3>Upcoming Live Lessons</h3>
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="background: var(--bg-primary); padding: 1.25rem; border-radius: 12px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <span style="font-size: 0.8rem; color: var(--accent-primary); font-weight: 600;">GUITAR MASTERCLASS</span>
+              <h4 style="font-size: 1.1rem; margin: 0.25rem 0;">Advanced Blues Solos with Marcus Vance</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Tomorrow, 4:00 PM - 4:45 PM WAT</p>
+            </div>
+            <a href="classroom.html?session=1" class="music-btn music-btn--primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Join Live Room</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Box: Quick Stats -->
+      <div class="dashboard-card-box">
+        <h3>Learning Progress</h3>
+        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+          <div>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Completed Sessions</span>
+            <h4 style="font-size: 1.75rem; font-weight: 800; color: var(--text-main);">4 Lessons</h4>
+          </div>
+          <div>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Current Focus Instrument</span>
+            <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--accent-primary);">Electric Guitar</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer id="global-footer">
+    <div class="footer-container"><p>&copy; 2026 MelodyMaster. All rights reserved.</p></div>
+  </footer>
+
+  <script src="js/global.js"></script>
+  <script src="js/student-dashboard.js"></script>
+</body>
+</html>

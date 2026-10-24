@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instructor Profile | MelodyMaster</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+
+  <!-- UNIQUE NAVIGATION BAR -->
+  <header id="global-nav-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo-link">Melody<span>Master</span></a>
+      <ul class="nav-menu-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="instructors.html">Browse Teachers</a></li>
+        <li><a href="about.html">How It Works</a></li>
+      </ul>
+      <div class="nav-auth-actions">
+        <a href="login.html" id="nav-login-btn" class="music-btn music-btn--outline">Log In</a>
+        <a href="signup.html" id="nav-signup-btn" class="music-btn music-btn--primary">Get Started</a>
+      </div>
+
+      <button id="nav-mobile-toggle-btn" class="nav-mobile-toggle" aria-label="Open Navigation">
+        ☰
+      </button>
+    </nav>
+  </header>
+
+  <!-- MAIN PROFILE WRAPPER -->
+  <main id="profile-main-wrapper" class="animate-fade-in">
+
+    <!-- Left Column: Details & Bio -->
+    <div class="profile-content-col">
+      
+      <!-- Hero Header Card -->
+      <div class="profile-hero-card">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop" alt="Marcus Vance" class="profile-large-avatar">
+        <div class="profile-hero-info">
+          <h1 id="profile-instructor-name">Marcus Vance</h1>
+          <span class="instrument-tag">🎸 Electric & Acoustic Guitar Specialist</span>
+          <div class="profile-meta-row">
+            <span>⭐ 4.9 Rating (48 Reviews)</span>
+            <span>📍 Lagos, Nigeria</span>
+            <span>🎓 10+ Years Teaching</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo Video Reel Section -->
+      <div class="profile-section-box">
+        <h3>Instructor Demo Reel</h3>
+        <p style="margin-bottom: 1.5rem;">Watch Marcus demonstrate his playing style, tone control, and teaching methodology.</p>
+        <div class="profile-video-container">
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000&auto=format&fit=crop" alt="Video thumbnail">
+          <button class="play-reel-btn" id="profile-play-video-btn">▶</button>
+        </div>
+      </div>
+
+      <!-- About Instructor -->
+      <div class="profile-section-box">
+        <h3>About Me</h3>
+        <p>Hello! I am Marcus. I have spent over a decade touring as a professional session guitarist and recording artist. My goal is to break down complex blues scales, sweep-picking mechanics, and advanced rhythm patterns into digestible steps so you can sound incredible whether you are playing live or in the studio.</p>
+      </div>
+
+      <!-- Student Reviews Section -->
+      <div class="profile-section-box">
+        <h3>Student Reviews</h3>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem;">
+          <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+              <strong>David K.</strong>
+              <span style="color: #fbbf24;">★★★★★</span>
+            </div>
+            <p style="font-size: 0.9rem;">"Marcus completely transformed my fretboard navigation in just 3 sessions. His live video setup is crystal clear with zero audio lag!"</p>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+              <strong>Sarah M.</strong>
+              <span style="color: #fbbf24;">★★★★★</span>
+            </div>
+            <p style="font-size: 0.9rem;">"Incredible patience and expert technique breakdowns. Worth every penny."</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Sticky Booking Sidebar -->
+    <aside class="booking-sidebar-card">
+      <div class="booking-price-header">
+        <div>
+          <span style="font-size: 0.85rem; color: var(--text-muted); display: block;">Live Session Fee</span>
+          <div class="price-val">$25 <span>/ 45 mins</span></div>
+        </div>
+        <span style="background: rgba(99, 102, 241, 0.15); color: var(--accent-primary); padding: 0.4rem 0.8rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600;">Available Now</span>
+      </div>
+
+      <ul class="booking-features-list">
+        <li><span>✓</span> 1-on-1 High-Fidelity Video Call</li>
+        <li><span>✓</span> Custom Tablatures & Practice Sheets</li>
+        <li><span>✓</span> Direct Chat & Progress Tracking</li>
+        <li><span>✓</span> Flexible Rescheduling Options</li>
+      </ul>
+
+      <a href="book-lesson.html?instructor=marcus-vance" id="profile-book-session-btn" class="music-btn music-btn--primary" style="width: 100%; text-align: center;">Book Live Session</a>
+    </aside>
+
+  </main>
+
+  <!-- UNIQUE FOOTER -->
+  <footer id="global-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 MelodyMaster. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- SEPARATE JAVASCRIPT FILES -->
+  <script src="js/global.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>
